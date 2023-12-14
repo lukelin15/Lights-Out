@@ -162,7 +162,7 @@ Our model achieved an RMSE of 0.0041986 on the training set. This means that, on
 On the test set, the model achieved an RMSE of 0.00325. This lower RMSE indicates that the model’s predictions were, on average, about 0.00325 units away from the true values on unseen data, which is slightly better than its performance on the training set.
 
 ## Visual Evaluation 
-<iframe src="Assets/regression_line.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="Assets/Baseline_regression.html" width=800 height=600 frameBorder=0></iframe>
 
 The scatter plot provided shows the model’s predicted values versus the actual values. Each point represents a power outage event, with its position along the x-axis showing the actual percentage of residential customers affected, and its position along the y-axis showing the model’s prediction.
 
