@@ -1,4 +1,5 @@
 # Lights Out: Forecasting Residential Impact of Power Outages
+by Luke Lin & Andrew Yin
 
 ## Framing the Problem
 In this project, we are tackling a regression problem. Our goal is to predict the percentage of residential customers (RES.CUST.PCT) affected by a major power outage. We chose this as our response variable because it provides a quantifiable measure of the impact of power outages on residential customers.
