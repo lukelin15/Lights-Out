@@ -14,9 +14,9 @@ Our target variable is RES.CUST.PCT, which represents the percentage of resident
 
 - `U.S._STATE`: This is a categorical variable representing the U.S. state where the outage occurred. The rationale behind including this feature is that the impact of an outage can vary by location due to factors such as infrastructure, population density, and local policies. By including the state as a feature, our model can learn these regional differences.
 - `OUTAGE.DURATION`: This is a numerical variable representing the duration of the power outage. It’s reasonable to assume that longer outages will affect more customers, making this a potentially powerful feature for our prediction problem.
-- `DEMAND.LOSS.MW`: The amount of peak demand lost during an outage.
-- `POPULATION`: The population in the area of the outage.
-- `CUSTOMERS.AFFECTED`: Number of customers affected by the outage.
+- `DEMAND.LOSS.MW` (numerical feature): The amount of peak demand lost during an outage.
+- `POPULATION` (numerical feature): The population in the area of the outage.
+- `CUSTOMERS.AFFECTED` (numerical feature): Number of customers affected by the outage.
 
 ## Baseline Model
 
@@ -43,7 +43,7 @@ Initially, we considered three features: `U.S._STATE`, `OUTAGE.DURATION`, and `P
 
 - **U.S._STATE (Nominal):** This categorical feature represents the U.S. state where the outage occurred. It’s encoded using one-hot encoding, which creates a binary variable for each state. This categorical feature represents the U.S. state where the outage occurred. The rationale behind including this feature is that the impact of an outage can vary by location due to factors such as infrastructure, population density, and local policies. By including the state as a feature, our model can learn these regional differences.
 
-- **OUTAGE.DURATION (Quantitative):** This numerical feature represents the duration of the power outage in minutes. It’s scaled using standard scaling, which standardizes the feature by subtracting the mean and scaling to unit variance. This numerical feature represents the duration of the power outage in minutes. It’s reasonable to assume that longer outages will affect more customers, making this a potentially powerful feature for our prediction problem.
+- **OUTAGE.DURATION (Quantitative Continuous):** This numerical feature represents the duration of the power outage in minutes. It’s scaled using standard scaling, which standardizes the feature by subtracting the mean and scaling to unit variance. This numerical feature represents the duration of the power outage in minutes. It’s reasonable to assume that longer outages will affect more customers, making this a potentially powerful feature for our prediction problem.
 
 The `POPULATION` feature was excluded after considering several factors:
 
@@ -151,15 +151,11 @@ pipeline.fit(X_train, y_train)
 
 ## Performance Metrics
 
-The performance of our model is evaluated using the Root Mean Squared Error (RMSE), a common metric for regression problems that measures the average magnitude of the prediction error.
+The performance of our model is evaluated using the Root Mean Squared Error (RMSE).
 
 ## Training Performance
 
-Our model achieved an RMSE of 0.0041986 on the training set. This means that, on average, the model’s predictions on the training data were about 0.0041986 units away from the true values.
-
-## Test Performance
-
-On the test set, the model achieved an RMSE of 0.00325. This lower RMSE indicates that the model’s predictions were, on average, about 0.00325 units away from the true values on unseen data, which is slightly better than its performance on the training set.
+Our model achieved an RMSE of 0.0041986 on the training set. This means that, on average, the model’s predictions on the training data were about 0.0041986 units away from the true values. On the test set, the model achieved an RMSE of 0.00325. This lower RMSE indicates that the model’s predictions were, on average, about 0.00325 units away from the true values on unseen data, which is slightly better than its performance on the training set.
 
 ## Visual Evaluation 
 <iframe src="Assets/Baseline_regression.html" width=800 height=600 frameBorder=0></iframe>
