@@ -19,6 +19,21 @@ Our target variable is RES.CUST.PCT, which represents the percentage of resident
 
 ## Baseline Model
 
+### Cleaning the Data
+In this section, we’ve performed a series of data cleaning steps on the outage DataFrame, which was read from an Excel file named “outage.xlsx”. This process was a direct replication of the cleaning procedure implemented in Project 3, ensuring consistency and reliability in our data preparation phase.
+
+Initially, we removed informational rows and columns that contained only null values from the DataFrame. We then set the column names based on the first row of the DataFrame for better readability and understanding of the data.
+
+Next, we dropped rows related to units and variables that were not necessary for our analysis. We also dropped the “variables” column as it was not needed.
+
+One of the crucial steps in this process was the creation of new datetime columns, OUTAGE.START and OUTAGE.RESTORATION. These were formed by combining the respective date and time columns, providing us with precise timestamps of when the outage started and ended. After creating these new columns, the original date and time columns were dropped to avoid redundancy.
+
+Lastly, we replaced the “NA” entries with NaN for missing values.
+
+After these cleaning steps, we were left with a cleaned DataFrame, outage_cleaned, ready for further analysis or modeling.
+
+Our exploratory data analysis on this dataset can be found [Empowering Resilience: Unraveling the Tapestry of Power Outages Over a Decade](https://lukelin15.github.io/Power-Outage-Analysis/).
+
 ### Model Description and Feature Selection
 
 Our baseline model is a Linear Regression model that predicts the percentage of residential customers (RES.CUST.PCT) affected by a major power outage. 
